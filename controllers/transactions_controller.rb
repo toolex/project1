@@ -15,5 +15,18 @@ get '/test' do
   erb(:test)
 end
 
-binding.pry
-nil
+get '/transactions/new' do
+  @merchants = Merchant.all
+  @tags = Tag.all
+  @transactions = Transaction.all
+  erb(:"transactions/new")
+end
+
+post '/transactions' do
+  transaction = Transaction.new(params)
+  transaction.save
+  redirect to("/transactions")
+end
+
+# binding.pry
+# nil

@@ -44,13 +44,14 @@ class Transaction
     return Tag.new( results.first )
   end
 
-  # def self.total()
-  #    @total = 0
-  #    Transaction.reduce{||}
-  #    @total += result.amount
-  #    return @total
-  #  end
-  # end
+  def self.total()
+    sql = "SELECT amount FROM transactions"
+    result = SqlRunner.run(sql)
+    totals = result.map{|hash|Transaction.new(hash)}
+    final_total = 0
+    totals.each{|total|final_total += total.amount}
+    return final_total
+  end
 
   def self.all()
     sql = "SELECT * FROM transactions"
