@@ -5,20 +5,19 @@ require_relative( '../models/merchant.rb' )
 also_reload( '../models/*' )
 require("pry")
 
+
 get '/transactions' do
   @transactions = Transaction.all
+  @total_spent = Transaction.total
   erb(:transactions)
 end
 
-get '/test' do
-  @total_spent = Transaction.total
-  erb(:test)
-end
 
 get '/transactions/new' do
   @merchants = Merchant.all
   @tags = Tag.all
   @transactions = Transaction.all
+  @total_spent = Transaction.total
   erb(:"transactions/new")
 end
 
@@ -27,6 +26,3 @@ post '/transactions' do
   transaction.save
   redirect to("/transactions")
 end
-
-# binding.pry
-# nil
