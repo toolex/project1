@@ -11,7 +11,7 @@ get '/transactions' do
 end
 
 get '/test' do
-  @transactions = Transaction.all
+  @total_spent = Transaction.total
   erb(:test)
 end
 
