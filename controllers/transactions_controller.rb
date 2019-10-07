@@ -18,7 +18,7 @@ get '/transactions/new' do
   @tags = Tag.all
   @transactions = Transaction.all
   @total_spent = Transaction.total
-  erb(:"transactions/new")
+  erb(:new)
 end
 
 post '/transactions' do
