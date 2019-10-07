@@ -1,37 +1,27 @@
-<form method="POST" action="/students/<%= @student.id %>">
-  <div class="form-wrapper">
+<form action="/transactions/<%= @transaction.id %>" method="post">
+  <label>
+    Choose a Merchant:
+    <select name="merchant_id">
 
-    <div class="form-el">
-      <label for="first_name">First Name:</label>
-      <input type="text" name="first_name" id="first_name" value="<%= @student.first_name %>"/>
-    </div>
+      <% for merchant in @merchants %>
 
-    <div class="form-el">
-      <label for="last_name">Last Name:</label>
-      <input type="text" name="last_name" id="last_name" value="<%= @student.last_name%>"/>
-    </div>
+      <option value="<%= merchant.id %>selected"><%= merchant.name %></option>
+      <% end %>
+    </select>
+  </label>
 
-    <div class="form-el">
-      <label for="house_select">Select House:</label>
-      <select name="house_id" id="house_select" selected="<%= @student.house_id  %>">
-        <% @houses.each do |house| %>
-          <% if house.id == @student.house_id %>
-            <option value=<%= house.id %> selected><%= house.name.capitalize %></option>
-          <% else %>
-            <option value=<%= house.id %>><%= house.name.capitalize %></option>
-          <% end %>
-        <% end %>
-      </select>
-    </div>
+  <label>
+    Choose a Tag:
+    <select name="tag_id">
+      <% for tag in @tags %>
+      <option value="<%= tag.id %>selected"><%= tag.type %></option>
+      <% end %>
+    </select>
+  </label>
 
-    <div class="form-el">
-      <label for="age">Age:</label>
-      <input type="number" name="age" id="age" value="<%= @student.age %>"/>
-    </div>
+  <label for="amount">Amount:</label>
+  <input type="number" name="amount" step="0.01" value="<%= @transaction.amount %>" />
 
-    <div class="form-el">
-      <input type="submit" value="Enrol Student"/>
-    </div>
+  <input type="submit" value="Submit Transaction"/>
 
-  </div>
 </form>

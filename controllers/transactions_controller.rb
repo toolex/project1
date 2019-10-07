@@ -42,7 +42,7 @@ get '/transactions/:id/edit' do
 end
 
 post '/transactions/:id' do
-  transaction = Transaction.find(params['id'])
+  transaction = Transaction.new(params)
   transaction.update
   redirect to "/transactions/#{params['id']}"
 end
