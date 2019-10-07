@@ -1,6 +1,7 @@
 require_relative("../models/merchant")
 require_relative("../models/tag")
 require_relative("../models/transaction")
+require("pry")
 
 Transaction.delete_all
 Tag.delete_all
@@ -19,11 +20,11 @@ tag3.save
 tag4.save
 tag5.save
 
-merchant1 = Mechant.new({"name" => "Tesco"})
-merchant2 = Mechant.new({"name" => "The Vue"})
-merchant3 = Mechant.new({"name" => "Lothian Buses"})
-merchant4 = Mechant.new({"name" => "British Gas"})
-merchant5 = Mechant.new({"name" => "Bob the Electrician"})
+merchant1 = Merchant.new({"name" => "Tesco"})
+merchant2 = Merchant.new({"name" => "The Vue"})
+merchant3 = Merchant.new({"name" => "Lothian Buses"})
+merchant4 = Merchant.new({"name" => "British Gas"})
+merchant5 = Merchant.new({"name" => "Bob the Electrician"})
 
 merchant1.save
 merchant2.save
@@ -60,3 +61,14 @@ transaction5 = Transaction.new({
   "tag_id" => tag5.id,
   "amount" => 34.69
   })
+
+transaction1.save
+transaction2.save
+transaction3.save
+transaction4.save
+transaction5.save
+
+
+
+binding.pry
+nil

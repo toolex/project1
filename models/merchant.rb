@@ -19,7 +19,7 @@ class Merchant
       $1
     )
     RETURNING id"
-    values = [@type]
+    values = [@name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
