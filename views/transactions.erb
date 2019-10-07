@@ -1,0 +1,14 @@
+<h2>Transactions</h2>
+
+<div id="list-transactions">
+  <% @transactions.each do |transaction| %>
+
+  <div class="transaction">
+    <h3><a href="/transactions/<%= transaction.id %>"></a></h3>
+    <p>Merchant: <%= transaction.merchant.name %></p>
+    <p>Tag: <%= transaction.tag.type %></p>
+    <p>Amount: <%= transaction.amount %></p>
+  </div>
+
+  <% end %>
+</div>
