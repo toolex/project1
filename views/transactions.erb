@@ -8,6 +8,9 @@
     <p>Merchant: <%= transaction.merchant.name %></p>
     <p>Tag: <%= transaction.tag.type %></p>
     <p>Amount: <%= transaction.amount %></p>
+    <li>
+        <a href="/transactions/<%= transaction.id %>">More Details</a>
+      </li>
   </div>
   <% end %>
 
