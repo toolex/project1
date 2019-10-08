@@ -1,13 +1,13 @@
 <form action="/transactions/<%= @transaction.id %>" method="post">
   <label>
     Choose a Merchant:
-    <select name="merchant_id">
+    <select name="merchant_id" id="merchant_id" selected="<%=  @transaction.merchant.id%>">
 
       <% for merchant in @merchants %>
         <% if merchant.id == @transaction.merchant.id %>
-          <option value="<%= merchant.id %>selected"><%= merchant.name %></option>
+          <option value=<%= merchant.id %>selected><%= merchant.name %></option>
         <% else %>
-          <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <option value=<%= merchant.id %>><%= merchant.name %></option>
         <% end %>
       <% end %>
     </select>
@@ -15,12 +15,12 @@
 
   <label>
     Choose a Tag:
-    <select name="tag_id">
+    <select name="tag_id" id="tag_id" selected="<%=  @transaction.tag.id%>">
       <% for tag in @tags %>
         <% if tag.id == @transaction.tag.id %>
-          <option value="<%= tag.id %>selected"><%= tag.type %></option>
+          <option value=<%= tag.id %>selected><%= tag.type %></option>
         <% else %>
-          <option value="<%= tag.id %>"><%= tag.type %></option>
+          <option value=<%= tag.id %>><%= tag.type %></option>
         <% end %>
       <% end %>
     </select>
@@ -29,6 +29,8 @@
   <label for="amount">Amount:</label>
   <input type="number" name="amount" step="0.01" value="<%= @transaction.amount %>" />
 
-  <input type="submit" value="Update Transaction"/>
+<div class="myButton">
 
+  <input type="submit" value="Update Transaction"/>
+</div>
 </form>
