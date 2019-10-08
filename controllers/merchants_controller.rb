@@ -9,10 +9,10 @@ get '/new_merchant' do
   erb(:"merchants/new_merchant")
 end
 
-post '/new_merchant' do
+post '/merchants/show' do
   merchant = Merchant.new(params)
   merchant.save
-  redirect to("/merchants/show")
+  redirect to '/merchants/show'
 end
 
 get '/merchants/show' do

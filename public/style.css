@@ -1,0 +1,16 @@
+body {
+  padding: 15px;
+  font-family: 'Veranda';
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: darkblue;
+}
+
+.submit_buttons

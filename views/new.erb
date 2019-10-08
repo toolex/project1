@@ -1,5 +1,7 @@
 <h1>New Transaction</h1>
 
+<li class="menu-item"><a href='/new_merchant'>Add a Merchant</a></li>
+
 <form action="/transactions" method="post">
   <label>
     Choose a Merchant:
@@ -22,6 +24,8 @@
   <label for="amount">Amount:</label>
   <input type="number" name="amount" step="0.01" />
 
+<div class="submit_buttons">
   <input type="submit" value="Submit Transaction"/>
+  </div>
 
 </form>
