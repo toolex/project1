@@ -4,7 +4,7 @@
   <% @transactions.each do |transaction| %>
 
   <div class="transaction">
-    
+    <hr>
     <h3><a href="/transactions/<%= transaction.id %>"></a></h3>
     <p>Merchant: <%= transaction.merchant.name %></p>
     <p>Tag: <%= transaction.tag.type %></p>

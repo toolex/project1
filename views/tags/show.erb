@@ -1,10 +1,11 @@
 <h2>Tags</h2>
-<li class="menu-item"><a href='/new_merchant'>Add a Tag</a></li>
+<li class="menu-item"><a href='/new_tag'>Add a Tag</a></li>
 
 <div id="list-tags">
   <% @tags.each do |tag| %>
   <div class="tag">
-    <h3><a href="/tag/<%= tag.id %>"></a></h3>
+    <hr>
+    <h3><a href="/tags/<%= tag.id %>"></a></h3>
     <p>Type: <%= tag.type %></p>
     <form action="/tags/<%= tag.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
   </div>
