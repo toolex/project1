@@ -7,12 +7,11 @@
   </head>
   <body>
     <nav id="menu">
-    <li class="menu-item"><a href='/transactions'>View Transactions</a></li>
-    <li class="menu-item"><a href='/transactions/new'>New Transaction</a></li>
-    <li class="menu-item"><a href='/merchants/show'>View Merchants</a></li>
-    <li class="menu-item"><a href='/tags/show'>View Tags</a></li>
+    <li class="menu-item"><a href='/transactions'>Transactions</a></li>
+    <li class="menu-item"><a href='/merchants/show'>Merchants</a></li>
+    <li class="menu-item"><a href='/tags/show'>Tags</a></li>
   </nav>
-    <p>Total Spent: £<%= @total_spent %></p>
+    <h1>Total Spent: £<%= @total_spent %></h1>
     <%= yield %>
   </body>
 </html>
