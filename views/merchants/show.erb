@@ -1,0 +1,13 @@
+<h2>Merchants</h2>
+<li class="menu-item"><a href='/new_merchant'>Add a Merchant</a></li>
+
+<div id="list-merchants">
+  <% @merchants.each do |merchant| %>
+  <div class="merchant">
+    <h3><a href="/merchant/<%= merchant.id %>"></a></h3>
+    <p>Name: <%= merchant.name %></p>
+    <form action="/merchants/<%= merchant.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+  </div>
+  <% end %>
+
+</div>

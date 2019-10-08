@@ -1,14 +1,28 @@
+require_relative( '../models/transaction.rb' )
+require_relative( '../models/tag.rb' )
 require_relative( '../models/merchant.rb' )
 also_reload( '../models/*' )
 
-get '/transactions/new_merchant' do
+get '/new_merchant' do
   @merchants = Merchant.all
   @total_spent = Transaction.total
-  erb(:new_merchant)
+  erb(:"merchants/new_merchant")
 end
 
 post '/transactions' do
-  transaction = Merchant.new(params)
-  transaction.save
+  merchant = Merchant.new(params)
+  merchant.save
   redirect to("/transactions")
+end
+
+get '/merchants/show' do
+  @merchants = Merchant.all
+  @total_spent = Transaction.total
+  erb(:"merchants/show")
+end
+
+post '/merchants/:id/delete' do
+  merchant = Merchant.find(params['id'])
+  merchant.delete
+  redirect to '/merchants/show'
 end
