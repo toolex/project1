@@ -35,7 +35,7 @@ merchant5.save
 transaction1 = Transaction.new({
   "merchant_id" => merchant1.id,
   "tag_id" => tag1.id,
-  "amount" => 50
+  "amount" => 150
   })
 
 transaction2 = Transaction.new({
@@ -53,13 +53,19 @@ transaction3 = Transaction.new({
 transaction4 = Transaction.new({
   "merchant_id" => merchant4.id,
   "tag_id" => tag4.id,
-  "amount" => 100
+  "amount" => 134
   })
 
 transaction5 = Transaction.new({
   "merchant_id" => merchant5.id,
   "tag_id" => tag5.id,
-  "amount" => 34.69
+  "amount" => 34.99
+  })
+
+transaction6 = Transaction.new({
+  "merchant_id" => merchant1.id,
+  "tag_id" => tag5.id,
+  "amount" => 90
   })
 
 transaction1.save
@@ -67,8 +73,9 @@ transaction2.save
 transaction3.save
 transaction4.save
 transaction5.save
+transaction6.save
 
 #
 
-binding.pry
-nil
+# binding.pry
+# nil

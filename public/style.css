@@ -1,6 +1,7 @@
 body {
   text-align: center;
-  background: #000000 none no-repeat scroll 0 0;
+  background: #000000 url("/images/logo.jpg");
+  background-repeat: no-repeat;
   font-family: Lucida, sans-serif;
   letter-spacing: 2px;
   word-spacing: 2px;
