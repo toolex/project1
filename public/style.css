@@ -16,6 +16,23 @@ a:hover {
   color: salmon;
 }
 
+.tracker {
+
+}
+
+.warning {
+  font-family: Impact, Charcoal, sans-serif;
+font-size: 16px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #FBFF27;
+font-weight: 700;
+text-decoration: underline solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: uppercase;
+}
+
 .details{
 color: rgb(223, 255, 220); font-size: 16px; line-height: 16px; padding: 2px; border-radius: 50px; font-family: Verdana, Geneva, sans-serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
 .details:hover {

@@ -11,7 +11,9 @@
     <li class="menu-item"><a href='/merchants/show'>Merchants</a></li>
     <li class="menu-item"><a href='/tags/show'>Tags</a></li>
   </nav>
-    <h1>Total Spent: £<%= @total_spent %></h1>
+    <div class="tracker">  
+      <h1>Total Spent: £<%= @total_spent %></h1>
+    </div>
     <%= yield %>
   </body>
 </html>

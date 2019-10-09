@@ -1,11 +1,10 @@
 <form action="/transactions/<%= @transaction.id %>" method="post">
   <label>
     Choose a Merchant:
-    <select name="merchant_id" id="merchant_id" selected="<%=  @transaction.merchant.id%>">
-
+    <select name="merchant_id" id="merchant_id">
       <% for merchant in @merchants %>
-        <% if merchant.id == @transaction.merchant.id %>
-          <option value=<%= merchant.id %>selected><%= merchant.name %></option>
+        <% if merchant.id == @transaction.merchant_id %>
+          <option value="<%= merchant.id %>"selected ><%= merchant.name %></option>
         <% else %>
           <option value=<%= merchant.id %>><%= merchant.name %></option>
         <% end %>
@@ -15,10 +14,10 @@
 
   <label>
     Choose a Tag:
-    <select name="tag_id" id="tag_id" selected="<%=  @transaction.tag.id%>">
+    <select name="tag_id" id="tag_id" >
       <% for tag in @tags %>
-        <% if tag.id == @transaction.tag.id %>
-          <option value=<%= tag.id %>selected><%= tag.type %></option>
+        <% if tag.id == @transaction.tag_id %>
+          <option value="<%= tag.id %>"selected ><%= tag.type %></option>
         <% else %>
           <option value=<%= tag.id %>><%= tag.type %></option>
         <% end %>
